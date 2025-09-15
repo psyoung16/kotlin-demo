@@ -110,7 +110,7 @@ class SearchUIControllerTest {
                     "data.items[]" type ARRAY means "contents 하단 items",
                     *FieldDescriptorSub.defaultSectionInfo(
                         "data", arrayOf(
-                            *FieldDescriptorSub.mykkoommingFeed("data.items[]")
+                            *FieldDescriptorSub.myroomFeed("data.items[]")
                         )
                     ),
 
@@ -168,7 +168,7 @@ class SearchUIControllerTest {
                     "data.items[]" type ARRAY means "contents 하단 items",
                     *FieldDescriptorSub.defaultSectionInfo(
                         "data", arrayOf(
-                            *FieldDescriptorSub.mykkoommingFeed("data.items[]")
+                            *FieldDescriptorSub.myroomFeed("data.items[]")
                         )
                     ),
 
