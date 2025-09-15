@@ -3,10 +3,10 @@ package org.psy.demo.core.sdui.mapper.factory.product
 import org.psy.demo.core.sdui.mapper.factory.DomainBaseMixinMapper
 import org.psy.demo.core.sdui.mapper.factory.DomainSupportingMixinMapper
 import org.psy.demo.infra.jpaEntity.SlideJpaEntity
-import org.psy.demo.core.domain.entity.Banner
-import org.psy.demo.core.domain.entity.vo.ContentLinkType
 import org.psy.demo.app.sdui.translator.BaseMixin
 import org.psy.demo.app.sdui.translator.SupportingMixin
+import org.psy.demo.core.content.domain.Banner
+import org.psy.demo.core.vo.ContentLinkType
 
 class BannerMixinMapper {
 

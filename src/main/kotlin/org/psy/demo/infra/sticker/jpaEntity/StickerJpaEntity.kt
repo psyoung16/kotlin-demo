@@ -18,7 +18,7 @@ class StickerJpaEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private val id: Long = 0L,
+    private val id: Long? = 0L,
 
     private val name: String? = null, //스티커 이름
     private val tagName: String? = null, //태그 네임  현재는 1:1

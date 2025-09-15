@@ -1,14 +1,14 @@
 package org.psy.demo.core.sdui.mapper.factory.product
 
-import org.psy.demo.core.domain.entity.Badge
-import org.psy.demo.core.domain.entity.Banner
-import org.psy.demo.core.domain.entity.Goods
-import org.psy.demo.core.domain.entity.post.Post
-import org.psy.demo.core.domain.entity.Story
 import org.psy.demo.core.sdui.mapper.compositor.ProductItemCompositor
 import org.psy.demo.core.sdui.mapper.factory.ItemCompositorFactory
 import org.psy.demo.app.sdui.translator.Tabs
-import org.psy.demo.sticker.domain.entity.StickerCalendar
+import org.psy.demo.core.content.domain.Banner
+import org.psy.demo.core.goods.domain.Goods
+import org.psy.demo.core.post.domain.Post
+import org.psy.demo.core.post.domain.Story
+import org.psy.demo.core.sticker.domain.StickerCalendar
+import org.psy.demo.core.user.domain.Badge
 import org.psy.demo.core.user.domain.User
 
 

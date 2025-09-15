@@ -6,7 +6,7 @@ import org.psy.demo.app.sdui.translator.BaseMixin
 import org.psy.demo.app.sdui.translator.SupportingMixin
 import org.psy.demo.core.sdui.mapper.factory.DomainBaseMixinMapper
 import org.psy.demo.core.sdui.mapper.factory.DomainSupportingMixinMapper
-import org.psy.demo.sticker.domain.entity.StickerCalendar
+import org.psy.demo.core.sticker.domain.StickerCalendar
 
 class StickerMixinMapper{
 

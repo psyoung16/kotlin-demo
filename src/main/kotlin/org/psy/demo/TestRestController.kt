@@ -1,8 +1,8 @@
 package org.psy.demo
 
 
-import org.psy.demo.sticker.application.port.`in`.GetStickerUseCase
-import org.psy.demo.sticker.domain.entity.Sticker
+import org.psy.demo.app.sticker.usecase.GetStickerUseCase
+import org.psy.demo.core.sticker.domain.Sticker
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 

@@ -8,7 +8,7 @@ import org.psy.demo.app.sdui.translator.container.Section
 import org.psy.demo.app.sdui.translator.container.SectionType
 import org.psy.demo.core.user.domain.User
 import org.psy.demo.common.exception.NOT_AVALIVABLE_DATA
-import org.psy.demo.core.domain.Banner
+import org.psy.demo.core.content.domain.Banner
 import org.psy.demo.core.goods.domain.Goods
 import org.psy.demo.core.post.domain.Story
 import org.psy.demo.core.post.domain.Post

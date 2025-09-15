@@ -1,8 +1,6 @@
 package org.psy.demo.common
 
 import org.psy.demo.common.exception.NOT_AVALIVABLE_DATA
-import org.psy.demo.core.domain.entity.Goods
-import org.psy.demo.core.domain.entity.ManageTag
 import org.psy.demo.app.sdui.translator.BaseMixin
 import org.psy.demo.app.sdui.translator.SupportingMixin
 import org.psy.demo.core.sdui.mapper.compositor.ProductItemCompositor
@@ -22,9 +20,11 @@ import org.psy.demo.app.sdui.translator.container.HeaderUI
 import org.psy.demo.app.sdui.translator.container.Section
 import org.psy.demo.app.sdui.translator.container.SectionType
 import org.psy.demo.app.sdui.translator.items.AlignItem
-import org.psy.demo.sticker.application.port.`in`.GetManageTagByStickerResponse
-import org.psy.demo.sticker.domain.entity.StickerCalendar
-import org.psy.demo.sticker.domain.entity.UserSticker
+import org.psy.demo.app.sticker.usecase.GetManageTagByStickerResponse
+import org.psy.demo.core.common.domain.ManageTag
+import org.psy.demo.core.goods.domain.Goods
+import org.psy.demo.core.sticker.domain.StickerCalendar
+import org.psy.demo.core.sticker.domain.UserSticker
 import java.time.LocalDate
 
 object MockDataSetting {

@@ -2,9 +2,9 @@ package org.psy.demo.core.sdui.mapper.factory.product
 
 import org.psy.demo.common.addPercent
 import org.psy.demo.common.formatPrice
-import org.psy.demo.core.domain.entity.Goods
 import org.psy.demo.app.sdui.translator.BaseMixin
 import org.psy.demo.app.sdui.translator.SupportingMixin
+import org.psy.demo.core.goods.domain.Goods
 import org.psy.demo.core.sdui.mapper.factory.DomainBaseMixinMapper
 import org.psy.demo.core.sdui.mapper.factory.DomainSupportingMixinMapper
 

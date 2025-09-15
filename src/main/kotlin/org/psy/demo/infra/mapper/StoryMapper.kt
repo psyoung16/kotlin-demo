@@ -1,7 +1,7 @@
 package org.psy.demo.infra.mapper
 
+import org.psy.demo.core.post.domain.Story
 import org.psy.demo.infra.jpaEntity.StoryJpaEntity
-import org.psy.demo.core.domain.entity.Story
 
 object StoryMapper {
 

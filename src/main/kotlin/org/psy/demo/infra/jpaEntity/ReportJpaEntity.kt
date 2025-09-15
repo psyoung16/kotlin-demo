@@ -1,7 +1,7 @@
 package org.psy.demo.infra.jpaEntity
 
-import org.psy.demo.core.domain.entity.vo.CommonStatus
 import jakarta.persistence.*
+import org.psy.demo.core.sticker.domain.vo.CommonStatus
 import java.util.*
 
 @Entity

@@ -1,6 +1,5 @@
 package org.psy.demo.app.sticker.usecase
 
-import org.psy.demo.sticker.domain.entity.UserPrize
 import org.psy.demo.core.user.domain.User
 import jakarta.validation.constraints.NotNull
 import org.psy.demo.core.sticker.domain.UserPrize

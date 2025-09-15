@@ -1,7 +1,7 @@
 package org.psy.demo.infra.jpaEntity
 
-import org.psy.demo.core.domain.entity.vo.FileStatus
 import jakarta.persistence.*
+import org.psy.demo.core.vo.FileStatus
 import java.util.*
 
 

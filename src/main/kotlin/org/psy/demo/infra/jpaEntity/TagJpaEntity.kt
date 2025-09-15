@@ -1,6 +1,7 @@
 package org.psy.demo.infra.jpaEntity
 
 import jakarta.persistence.*
+import org.psy.demo.core.vo.TagStatus
 import java.util.*
 
 @Entity

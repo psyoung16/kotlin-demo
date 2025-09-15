@@ -134,7 +134,7 @@ class StorageUIControllerTest {
 
                     *FieldDescriptorSub.defaultSectionInfo("data", arrayOf(
                         "data.items[]" type ARRAY means "보관함-탭의 items",
-                        *FieldDescriptorSub.mykkoommingPost("data.items[]")
+                        *FieldDescriptorSub.myroomPost("data.items[]")
                     )),
 
                     "log" type STRING means "log" isOptional true

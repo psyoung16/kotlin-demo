@@ -1,25 +1,25 @@
 package org.psy.demo.common
 
+import org.psy.demo.app.main.response.MainGoodsManagingResponse
+import org.psy.demo.app.main.response.MainWriterResponse
+import org.psy.demo.core.common.domain.Code
+import org.psy.demo.core.common.domain.ManageTag
+import org.psy.demo.core.common.domain.NotiDataResponse
+import org.psy.demo.core.content.domain.Banner
+import org.psy.demo.core.content.domain.BannerWithPagination
+import org.psy.demo.core.content.domain.ChallengeResponse
+import org.psy.demo.core.content.domain.Popup
+import org.psy.demo.core.content.domain.PopupWithPagination
+import org.psy.demo.core.goods.domain.Goods
+import org.psy.demo.core.phrase.domain.PhraseResponse
+import org.psy.demo.core.phrase.domain.PhraseWeight
+import org.psy.demo.core.post.domain.BestPost
+import org.psy.demo.core.post.domain.BestPostWithPagination
+import org.psy.demo.core.vo.SlideExposure
+import org.psy.demo.core.vo.SlidePosition
+import org.psy.demo.core.vo.SlideSimpleImageResponse
+import org.psy.demo.core.vo.SlideStatus
 import org.psy.demo.infra.jpaEntity.SlideJpaEntity
-import org.psy.demo.core.domain.entity.Banner
-import org.psy.demo.core.domain.entity.BannerWithPagination
-import org.psy.demo.core.domain.entity.BestPost
-import org.psy.demo.core.domain.entity.BestPostWithPagination
-import org.psy.demo.core.domain.entity.ChallengeResponse
-import org.psy.demo.core.domain.entity.Code
-import org.psy.demo.core.domain.entity.Goods
-import org.psy.demo.core.domain.entity.MainGoodsManagingResponse
-import org.psy.demo.core.domain.entity.MainWriterResponse
-import org.psy.demo.core.domain.entity.ManageTag
-import org.psy.demo.core.domain.entity.NotiDataResponse
-import org.psy.demo.core.domain.entity.PhraseResponse
-import org.psy.demo.core.domain.entity.PhraseWeight
-import org.psy.demo.core.domain.entity.Popup
-import org.psy.demo.core.domain.entity.PopupWithPagination
-import org.psy.demo.core.domain.entity.vo.SlideExposure
-import org.psy.demo.core.domain.entity.vo.SlidePosition
-import org.psy.demo.core.domain.entity.vo.SlideSimpleImageResponse
-import org.psy.demo.core.domain.entity.vo.SlideStatus
 
 object MainMockDataSetting {
 

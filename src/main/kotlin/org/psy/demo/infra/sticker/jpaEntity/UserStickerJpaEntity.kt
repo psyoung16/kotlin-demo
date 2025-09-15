@@ -1,7 +1,7 @@
 package org.psy.demo.infra.sticker.jpaEntity
 
-import org.psy.demo.sticker.domain.entity.UserSticker
 import jakarta.persistence.*
+import org.psy.demo.core.sticker.domain.UserSticker
 import java.time.LocalDate
 import java.util.*
 

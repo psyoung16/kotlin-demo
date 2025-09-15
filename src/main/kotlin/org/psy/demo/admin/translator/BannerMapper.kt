@@ -1,6 +1,6 @@
 package org.psy.demo.admin.translator
 
-import org.psy.demo.core.domain.Banner
+import org.psy.demo.core.content.domain.Banner
 import org.psy.demo.core.promotion.ImageGroupData
 import org.psy.demo.core.promotion.PromotionImageRequest
 import org.psy.demo.core.promotion.PromotionRouteRequest

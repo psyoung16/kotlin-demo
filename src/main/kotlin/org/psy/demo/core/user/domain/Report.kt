@@ -1,6 +1,6 @@
 package org.psy.demo.core.user.domain
 
-import org.psy.demo.core.domain.entity.post.Post
+import org.psy.demo.core.post.domain.Post
 import org.psy.demo.infra.jpaEntity.ReportState
 import org.psy.demo.infra.jpaEntity.ReportType
 

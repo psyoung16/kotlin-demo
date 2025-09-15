@@ -1,6 +1,6 @@
 package org.psy.demo.common
 
-import org.psy.demo.core.domain.entity.vo.PostInfoType
+import org.psy.demo.core.vo.PostInfoType
 import java.time.LocalDateTime
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter

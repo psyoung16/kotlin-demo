@@ -1,7 +1,7 @@
 package org.psy.demo.infra.mapper
 
+import org.psy.demo.core.common.domain.File
 import org.psy.demo.infra.jpaEntity.FileJpaEntity
-import org.psy.demo.core.domain.entity.File
 
 object FileMapper {
 

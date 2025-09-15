@@ -18,7 +18,7 @@ import org.psy.demo.app.sdui.translator.container.HeaderUI
 import org.psy.demo.app.sdui.translator.container.Section
 import org.psy.demo.app.sdui.translator.container.SectionType
 import org.psy.demo.app.sdui.translator.items.AlignItems
-import org.psy.demo.core.domain.Banner
+import org.psy.demo.core.content.domain.Banner
 import org.psy.demo.core.vo.TagType
 import org.psy.demo.core.post.domain.Post
 import org.psy.demo.core.user.domain.User

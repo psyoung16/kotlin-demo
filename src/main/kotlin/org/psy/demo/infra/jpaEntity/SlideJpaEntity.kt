@@ -2,13 +2,13 @@ package org.psy.demo.infra.jpaEntity
 
 //import org.psy.kotlinhexagonaldemo.common.DefaultImgUtil
 import org.psy.demo.common.formattingLegacyDate
-import org.psy.demo.core.domain.entity.Banner
-import org.psy.demo.core.domain.entity.Popup
-import org.psy.demo.core.domain.entity.vo.SlideExposure
-import org.psy.demo.core.domain.entity.vo.SlidePosition
-import org.psy.demo.core.domain.entity.vo.SlideSimpleImageResponse
-import org.psy.demo.core.domain.entity.vo.SlideStatus
 import jakarta.persistence.*
+import org.psy.demo.core.content.domain.Banner
+import org.psy.demo.core.content.domain.Popup
+import org.psy.demo.core.vo.SlideExposure
+import org.psy.demo.core.vo.SlidePosition
+import org.psy.demo.core.vo.SlideSimpleImageResponse
+import org.psy.demo.core.vo.SlideStatus
 import java.util.*
 
 

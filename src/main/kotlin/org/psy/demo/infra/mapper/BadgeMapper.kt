@@ -1,9 +1,9 @@
 package org.psy.demo.infra.mapper
 
 import org.psy.demo.common.ImgUtil
+import org.psy.demo.core.user.domain.Badge
 import org.psy.demo.infra.jpaEntity.BadgeJpaEntity
 import org.psy.demo.infra.jpaEntity.BadgeType
-import org.psy.demo.core.domain.entity.Badge
 import org.psy.demo.core.user.domain.User
 
 object BadgeMapper {

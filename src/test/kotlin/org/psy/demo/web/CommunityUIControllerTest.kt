@@ -29,6 +29,7 @@ import org.springframework.web.context.WebApplicationContext
 import org.psy.demo.app.sdui.usecase.GetCommunityUIMainUseCase
 import org.psy.demo.app.sdui.translator.Tabs
 import org.psy.demo.user.domain.AuthUser
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.context.SecurityContextHolder
 
@@ -56,6 +57,7 @@ class CommunityUIControllerTest {
     private lateinit var mockMvc: MockMvc
 
 
+    @Qualifier("getCommunityMainUseCase")
     @Autowired
     private lateinit var getCommunityUIMainUseCase: GetCommunityUIMainUseCase
 
@@ -117,7 +119,7 @@ class CommunityUIControllerTest {
                         "data.curations",
                         arrayOf(
                             "data.curations.items[]" type ARRAY means "커뮤니티 큐레이션 section items",
-                            *FieldDescriptorSub.mykkoommingFeed("data.curations.items[]")
+                            *FieldDescriptorSub.myroomFeed("data.curations.items[]")
                         )
                     ),
                     "data.filters" type OBJECT means "커뮤니티 필터",
@@ -166,7 +168,7 @@ class CommunityUIControllerTest {
 
                     *FieldDescriptorSub.defaultSectionInfo("data", arrayOf(
                         "data.items[]" type ARRAY means "커뮤니티-하단 contents의 items",
-                        *FieldDescriptorSub.mykkoommingFeed("data.items[]")
+                        *FieldDescriptorSub.myroomFeed("data.items[]")
                     )),
 
                     "log" type STRING means "log" isOptional true

@@ -15,10 +15,6 @@ import org.psy.demo.common.MockDataSetting.mockManageTag
 import org.psy.demo.common.MockDataSetting.mockStickerCalendarList
 import org.psy.demo.common.MockDataSetting.mockStikerCalendar
 import org.psy.demo.config.JwtService
-import org.psy.demo.sticker.application.port.`in`.GetStickerUseCase
-import org.psy.demo.sticker.application.port.`in`.StickingStickerUseCase
-import org.psy.demo.sticker.domain.entity.Sticker
-import org.psy.demo.sticker.domain.entity.StickerResponse
 import org.psy.demo.user.domain.AuthUser
 import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
@@ -31,6 +27,10 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.psy.demo.app.sticker.controller.StickerBookController
+import org.psy.demo.app.sticker.response.StickerResponse
+import org.psy.demo.app.sticker.usecase.GetStickerUseCase
+import org.psy.demo.app.sticker.usecase.StickingStickerUseCase
+import org.psy.demo.core.sticker.domain.Sticker
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest

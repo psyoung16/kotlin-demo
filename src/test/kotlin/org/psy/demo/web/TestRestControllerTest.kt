@@ -6,8 +6,6 @@ import com.epages.restdocs.apispec.ResourceDocumentation.resource
 import com.epages.restdocs.apispec.ResourceSnippetParameters
 import org.psy.demo.TestRestController
 import org.psy.demo.common.*
-import org.psy.demo.sticker.application.port.`in`.GetStickerUseCase
-import org.psy.demo.sticker.domain.entity.Sticker
 import org.psy.demo.user.domain.AuthUser
 import io.mockk.every
 import io.mockk.junit5.MockKExtension
@@ -16,6 +14,8 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
+import org.psy.demo.app.sticker.usecase.GetStickerUseCase
+import org.psy.demo.core.sticker.domain.Sticker
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
