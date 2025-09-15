@@ -67,11 +67,15 @@ src/main/kotlin/org/psy/demo/
 │   │   └── service/
 │   └── vo/                      # 공통 Value Objects
 │
-├── infra/ (90 files)            # 인프라스트럭처 레이어
+├── infra/ (90 files)            # 인프라스트럭처 레이어, 외부 Client 연결
 │   ├── jpaEntity/               # JPA 엔티티 (@Entity)
 │   ├── jpaRepository/           # Spring Data JPA 인터페이스
 │   ├── repository/              # 비즈니스 Repository 구현체
 │   ├── mapper/                  # Entity ↔ Domain 매핑
+    └── connector/      # 새로 만들 외부 API 커넥터 (예시임. 실제 사용하진 않음)
+      ├── ExternalApiClient.kt
+      └── dto/        # 외부 API 응답 DTO들
+
 │   ├── sticker/                 # 스티커 인프라 (하위 모듈)
 │   │   ├── jpaEntity/
 │   │   └── repository/
