@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    write.hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url:
+      username:
+      password:
+    read-only.hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url:
+      username:
+      password:
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: false
+    properties:
+      hibernate.format_sql: true
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  data:
+    redis:
+      host: 10.0.6.25
+      port: 6379
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.springframework.web: DEBUG
+jwt:
+  secret:
+data:
+  sessionTime: 10800
+  s3Url:
+

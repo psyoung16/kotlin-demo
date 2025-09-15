@@ -1,0 +1,79 @@
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  </head>
+
+  <body>
+
+  <div id="swagger-ui"></div>
+  <!--<div>
+    <input type="text" id="token-input" placeholder="Enter your token">
+    <button id="set-token-button">Set Token</button>
+  </div>-->
+    <script src="./swagger-ui-bundle.js" charset="UTF-8"> </script>
+    <script src="./swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
+    <script src="./swagger-initializer.js" charset="UTF-8"> </script>
+
+  <script>
+    window.onload = () => {
+      window.ui = SwaggerUIBundle({
+        url: '/api/CLIENT/v3.0/static/swagger-ui/openapi3.yaml',
+        dom_id: '#swagger-ui',
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        layout: "StandaloneLayout",
+        //강제 setting....
+        requestInterceptor: (req) => {
+          const token = localStorage.getItem('authToken');
+          if (token) {
+            req.headers['Authorization'] = token;
+          }
+          return req;
+        }
+      });
+      // Create a MutationObserver to watch for the description element
+      const observer = new MutationObserver((mutations, me) => {
+        const descriptionElement = document.querySelector('.description');
+        if (descriptionElement) {
+          // Found the description element, add the input and button
+          const inputField = document.createElement('input');
+          inputField.type = 'text';
+          inputField.id = 'token-input';
+          inputField.placeholder = 'Enter your token';
+
+          const setButton = document.createElement('button');
+          setButton.id = 'set-token-button';
+          setButton.textContent = 'Set Token';
+
+          descriptionElement.appendChild(inputField);
+          descriptionElement.appendChild(setButton);
+
+          setButton.addEventListener('click', () => {
+            const token = inputField.value;
+            localStorage.setItem('authToken', token);
+            alert('Token set!');
+          });
+
+          // Stop observing
+          me.disconnect();
+        }
+      });
+
+      // Start observing the body for added nodes
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    };
+  </script>
+  </body>
+</html>

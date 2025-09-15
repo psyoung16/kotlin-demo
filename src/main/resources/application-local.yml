@@ -1,0 +1,41 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    write.hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/demoapp?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8
+      username:
+      password:
+    read-only.hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://localhost:3306/demoapp?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8
+      username:
+      password:
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      hibernate:
+        use_sql_comments: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.springframework.web: DEBUG
+jwt:
+  secret:
+data:
+  sessionTime: 10800
+  s3Url:

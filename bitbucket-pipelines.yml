@@ -1,0 +1,70 @@
+image: atlassian/default-image:4
+
+pipelines:
+  branches:
+    dev:
+      - step:
+          name: Build & Push to ECR (DEV)
+          size: 2x
+          services:
+            - docker
+          caches:
+            - gradle
+          script:
+            - echo "Starting resource monitoring..."
+            - while true; do top -b -n1 | head -n 10; free -m; sleep 30; done & # 백그라운드에서 리소스 모니터링
+            - docker build --build-arg ENVIRONMENT=dev -t $AWS_ECR_REPOSITORY_NAME-dev-ecr:$BITBUCKET_COMMIT .
+            - pipe: atlassian/aws-ecr-push-image:2.2.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID_DEV
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY_DEV
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                IMAGE_NAME: $AWS_ECR_REPOSITORY_NAME-dev-ecr
+                TAGS: $BITBUCKET_COMMIT
+
+      - step:
+          name: Deploy to ECS (DEV)
+          script:
+            - sed "s/IMAGE_TAG_PLACEHOLDER/$BITBUCKET_COMMIT/g" task-definition-dev.json |
+              sed "s/IMAGE_REPOSITORY_NAME_PLACEHOLDER/$AWS_ECR_REPOSITORY_NAME-dev/g" |
+              sed "s/SERVICE_NAME_PLACEHOLDER/$AWS_ECS_SERVICE_NAME-dev/g" > task-definition.json
+            - pipe: atlassian/aws-ecs-deploy:1.9.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID_DEV
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY_DEV
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                CLUSTER_NAME: kkoomming-dev-cluster
+                SERVICE_NAME: $AWS_ECS_SERVICE_NAME-dev-svc
+                TASK_DEFINITION: 'task-definition.json'
+    prd:
+      - step:
+          name: Build & Push to ECR (PRD)
+          services:
+            - docker
+          caches:
+            - gradle
+          script:
+            - docker build --build-arg ENVIRONMENT=prd -t $AWS_ECR_REPOSITORY_NAME-prd-ecr:$BITBUCKET_COMMIT .
+            - pipe: atlassian/aws-ecr-push-image:2.2.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                IMAGE_NAME: $AWS_ECR_REPOSITORY_NAME-prd-ecr
+                TAGS: $BITBUCKET_COMMIT
+
+      - step:
+          name: Deploy to ECS (PRD)
+          script:
+            - sed "s/IMAGE_TAG_PLACEHOLDER/$BITBUCKET_COMMIT/g" task-definition-prd.json |
+              sed "s/IMAGE_REPOSITORY_NAME_PLACEHOLDER/$AWS_ECR_REPOSITORY_NAME-prd/g" |
+              sed "s/SERVICE_NAME_PLACEHOLDER/$AWS_ECS_SERVICE_NAME-prd/g" > task-definition.json
+            - pipe: atlassian/aws-ecs-deploy:1.9.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                CLUSTER_NAME: kkoomming-prd-cluster
+                SERVICE_NAME: $AWS_ECS_SERVICE_NAME-prd-svc
+                TASK_DEFINITION: 'task-definition.json'
+

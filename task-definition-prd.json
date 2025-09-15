@@ -1,0 +1,33 @@
+{
+  "family": "SERVICE_NAME_PLACEHOLDER-td",
+  "executionRoleArn": "arn:aws:iam::301355488103:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [
+    {
+      "name": "SERVICE_NAME_PLACEHOLDER-cnt",
+      "image": "301355488103.dkr.ecr.ap-northeast-2.amazonaws.com/IMAGE_REPOSITORY_NAME_PLACEHOLDER-ecr:IMAGE_TAG_PLACEHOLDER",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "/ecs/SERVICE_NAME_PLACEHOLDER-td",
+          "awslogs-region": "ap-northeast-2",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "1024",
+  "memory": "2048"
+}

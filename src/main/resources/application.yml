@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    write.hikari:
+      driver-class-name: org.h2.Driver
+      jdbc-url: jdbc:h2:mem:testdb
+      username: sa
+      password: 
+    read-only.hikari:
+      driver-class-name: org.h2.Driver
+      jdbc-url: jdbc:h2:mem:testdb
+      username: sa
+      password:
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  data:
+    redis:
+      host: 10.120.40.4
+      port: 6379
+
+logging:
+  level:
+    org.hibernate.SQL: info
+    org.springframework.web: DEBUG
+jwt:
+  secret: 52225c3933bc750411a21766536e7b43f844988c1e7d2ea79ac7ecbfa6424133628259a7d858b05fbacb1b2b601bcf2bf40a3f31add6c4441aa7cc29cc51bc2b
+data:
+  sessionTime: 10800
+  s3Url: https://dftgic7kmxqhe.cloudfront.net
